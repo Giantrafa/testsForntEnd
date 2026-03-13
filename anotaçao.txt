@@ -1,0 +1,25 @@
+(lista de escolhas do npx create-next-app@latest my-app ){
+    TypeSctipt: No
+    escolha linter: ESLint
+    React Compiler: No
+    Tailwind CSS: No
+    'src/'directory: No
+    App Router: Yes
+    import alias: No
+}
+
+duvidas sobre como testar olhar o README
+
+pra fexhar a porta (Crtl + c)
+
+Para mudar a pagina principal
+/app/page.js 
+
+.utils
+tem um index.js q pega parte do link da img da internet
+
+.components
+Esta criando o componente q poder ser usado varias veses na pagina, cada um funciona de maneira diferente
+|Profile| e |Avatar| se conversa para poder pegar os dados da imagem e poder organiza escolha
+|GeradorAleatorio| usa  o proprio React para cria um botao de loop 
+|LoopContador| pega o texto colocado e aplica um loop de numeros que mostra o testo na mesma quantidade do loop

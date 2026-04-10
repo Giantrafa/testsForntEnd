@@ -4,6 +4,12 @@ import TeaGathering from "@/components/loopContador";
 import Profile from "@/components/Profile";
 import GeradorTextoAleatorio from "@/components/GeradorTextoAleatorio";
 
+/* 
+//import JogoDados from "@/components/JogoDados";
+//caminho errado mas e so pra ter uma copia
+//<JogoDados />
+*/
+
 export default function Home() {
   return (
     <div>

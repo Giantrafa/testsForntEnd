@@ -13,6 +13,8 @@ import GeradorTextoAleatorio from "@/components/GeradorTextoAleatorio";
 export default function Home() {
   return (
     <div>
+      <Link href="/tarefas">Lista de Tarefas</Link>
+      <hr />
       <GeradorAleatorio/>
       <TeaGathering/>
       <Profile/>

@@ -1,25 +1,31 @@
-//backEnd
 "use client";
 
-import { useState } from "react";
+import { getTarefas } from "@/api";
+import { useQuery } from "@tanstack/react-query";
+import Link from "next/link";
 
 export default function ListaDeTarefas() {
-  const [tarefas, setTarefas] = useState([]);
-  async function handlerCarregarTarefas(){
-    const response = await fetch(
-    //  ver depois
-    );
-    const data = await response.json();
-    setTarefas(data.results ?? []);
-  }
-  
-  return(
-    <><h1>Lista de Tarefas</h1>
-      <hr />
-      <button onClick={handleCarregarTarefas}>Carregar Tarefas</button>
+  const { data, isFetching, isLoading, isError, error } = useQuery({
+    queryKey: ["tarefas"],
+    queryFn: getTarefas,
+  });
+
+  return (
+    <>
+      <Link href="/">Home</Link>
+      <br />
+      {isError && (
+        <>
+          <h2>Error: {error.message}</h2> <hr />{" "}
+        </>
+      )}
+      <h1>
+        Lista de Tarefas {isLoading && "(carregando...)"}{" "}
+        {isFetching && "[buscando...]"}
+      </h1>
       <hr />
       <ol>
-        {tarefas.map((tarefa) => (
+        {data?.map((tarefa) => (
           <li key={tarefa.objectId}>
             {tarefa.descricao} ({`${tarefa.concluida}`})
           </li>

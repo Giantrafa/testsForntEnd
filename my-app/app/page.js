@@ -1,8 +1,8 @@
-import styles from "./page.module.css";
 import GeradorAleatorio from "@/components/GeradorAleatorio";
 import TeaGathering from "@/components/loopContador";
 import Profile from "@/components/Profile";
 import GeradorTextoAleatorio from "@/components/GeradorTextoAleatorio";
+import Link from "next/link";
 
 /* 
 //import JogoDados from "@/components/JogoDados";
@@ -15,9 +15,13 @@ export default function Home() {
     <div>
       <Link href="/tarefas">Lista de Tarefas</Link>
       <hr />
-      <GeradorAleatorio/>
+      <GeradorAleatorio/>           
+       <hr />
+       <GeradorAleatorio/>       
+       <hr />
       <TeaGathering/>
-      <Profile/>
+      <hr />
+      <Profile/>    
        <hr />
       <GeradorTextoAleatorio>Gerador Texto 1</GeradorTextoAleatorio>
       <hr />

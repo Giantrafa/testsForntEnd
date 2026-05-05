@@ -1,8 +1,10 @@
+"use client";
 import GeradorAleatorio from "@/components/GeradorAleatorio";
 import TeaGathering from "@/components/loopContador";
 import Profile from "@/components/Profile";
 import GeradorTextoAleatorio from "@/components/GeradorTextoAleatorio";
 import Link from "next/link";
+import { useTaskFilter } from "@/zustand";
 
 /* 
 //import JogoDados from "@/components/JogoDados";
@@ -11,9 +13,11 @@ import Link from "next/link";
 */
 
 export default function Home() {
+  const filtrarConcluidas = useTaskFilter((state) => state.filtrarConcluidas);
   return (
     <div>
-      <Link href="/tarefas">Lista de Tarefas</Link>
+      <Link href="/tarefas">Lista de Tarefas</Link> (Filtro ativado:{" "}
+      {filtrarConcluidas ? "Sim" : "Não"})
       <hr />
       <GeradorAleatorio/>           
        <hr />
